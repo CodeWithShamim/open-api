@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { FC, ReactNode } from "react";
-import { ThemeProvider } from "next/themes";
-import { SessionProvider } from "next/auth/react";
+import { ThemeProvider } from "next-themes";
+import { SessionProvider } from "next-auth/react";
 
 interface providersProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface providersProps {
 
 const Providers: FC<providersProps> = ({ children }) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <SessionProvider>{children}</SessionProvider>
     </ThemeProvider>
   );
