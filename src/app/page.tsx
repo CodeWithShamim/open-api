@@ -1,10 +1,11 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import LargeHeading from "@/components/ui/LargeHeading";
+import Paragraph from "@/components/ui/Paragraph";
 
 export default function Home() {
   return (
-    <h1>Hello</h1>
-  )
+    <>
+      <Paragraph size="sm">Hello home</Paragraph>
+      <LargeHeading>Heding large</LargeHeading>
+    </>
+  );
 }

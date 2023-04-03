@@ -26,6 +26,9 @@ export default function RootLayout({
           <Toaster position="bottom-right" />
           <main>{children}</main>
         </Providers>
+
+        {/* allow more height for mobile menu on mobile  */}
+        <div className="h-40 md:hidden"></div>
       </body>
     </html>
   );
