@@ -3,9 +3,8 @@ import Paragraph from "@/components/ui/Paragraph";
 
 export default function Home() {
   return (
-    <>
+    <div className="mt-20">
       <Paragraph size="sm">Hello home</Paragraph>
-      <LargeHeading>Heding large</LargeHeading>
-    </>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import { Toaster } from "@/components/ui/Toast";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,8 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         <Providers>
           <Toaster position="bottom-right" />
+          {/* @ts-expect-error server component */}
+          <Navbar />
           <main>{children}</main>
         </Providers>
 
