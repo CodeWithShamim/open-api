@@ -13,7 +13,8 @@ const SignInButton: FC<SignInButtonProps> = () => {
     setIsLoading(true);
 
     try {
-      await signIn("google");
+        throw new Error("some")
+      await signIn("googled");
     } catch (error) {
       toast({
         title: "Error singing in",
@@ -21,6 +22,8 @@ const SignInButton: FC<SignInButtonProps> = () => {
         type: "error",
       });
     }
+
+    // setIsLoading(false);
   };
 
   return (
