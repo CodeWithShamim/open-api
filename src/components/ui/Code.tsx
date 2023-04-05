@@ -34,7 +34,7 @@ const Code: FC<CodeProps> = ({
           if (i > code.length) {
             clearInterval(intervalId);
           }
-        }, 15);
+        }, 25);
 
         return () => clearInterval(intervalId);
       }, animationDelay || 150);
