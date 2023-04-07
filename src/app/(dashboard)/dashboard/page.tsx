@@ -26,6 +26,7 @@ const page = async () => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      {/* @ts-expect-error */}
       {apiKey ? <ApiDashboard /> : <RequestApiKey />}
     </div>
   );
