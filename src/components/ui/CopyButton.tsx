@@ -5,10 +5,12 @@ import { Copy } from "lucide-react";
 
 interface CopyButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   valueToCopy: string;
+  childrenValue?: string;
 }
 
 const CopyButton: FC<CopyButtonProps> = ({
   valueToCopy,
+  childrenValue,
   className,
   ...props
 }) => {
@@ -29,6 +31,7 @@ const CopyButton: FC<CopyButtonProps> = ({
       {...props}
     >
       <Copy className="h-5 w-5" />
+      {childrenValue && <p className="ml-2">{childrenValue}</p>}
     </Button>
   );
 };
