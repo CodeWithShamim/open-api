@@ -44,9 +44,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     //     return res.data.data[0].embedding;
     //   })
     // );
-
-    const embeddings = [1000, 200000];
-
+    const embeddings = [
+      [1, 2, 3],
+      [4, 5, 6],
+    ];
     const similarity = cosineSimilarity(embeddings[0], embeddings[1]);
 
     const duration = new Date().getTime() - start.getTime();

@@ -4,9 +4,10 @@ import { NextResponse } from "next/server";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
+
 const redis = new Redis({
-  url: process.env.REDIS_URL,
-  token: process.env.REDIS_SECRET,
+  url: process.env.REDIS_URL || "",
+  token: process.env.REDIS_SECRET || "",
 });
 
 const ratelimit = new Ratelimit({
