@@ -7,13 +7,15 @@ import {
   DropdownMenuItem,
 } from "@/ui/DropdownMenu";
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { buttonVariants } from "@/ui/Button";
-import Link from "next/link";
+import Button from "@/ui/Button";
 import Icons from "./Icons";
+import { useRouter } from "next/navigation";
 
 interface MenuToggleProps {}
 
 const MenuToggle: FC<MenuToggleProps> = () => {
+  const router = useRouter();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,23 +23,11 @@ const MenuToggle: FC<MenuToggleProps> = () => {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" forceMount>
-        <DropdownMenuItem>
-          <div>
-            <Link
-              href="/documentation"
-              className={buttonVariants({ variant: "ghost" })}
-            >
-              Documentation
-            </Link>
-          </div>
+        <DropdownMenuItem onClick={()=> router.push("/documentation")}>
+          <Button variant="ghost">Documentation</Button>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link
-            href="/dashboard"
-            className={buttonVariants({ variant: "ghost" })}
-          >
-            Dashboard
-          </Link>
+        <DropdownMenuItem onClick={()=> router.push("/dashboard")}>
+          <Button variant="ghost">Dashboard</Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -79,7 +79,7 @@ const APiKeyOptions: FC<APiKeyOptionsProps> = ({ apiKeyId, apiKey }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger disabled={isCreatingNew || isRevoking} asChild>
-        <Button variant="ghost" className="flex gap-2 items-center">
+        <Button variant="default" className="flex gap-2 items-center">
           <p>
             {isCreatingNew
               ? "Creating new key"
