@@ -6,6 +6,7 @@ import SignInButton from "@/components/SignInButton";
 import SignOutButton from "@/components/SignOutButton";
 import ThemeToggle from "@/components/ThemeToggle";
 import { authOptions } from "@/lib/auth";
+import MenuToggle from "./MenuToggle";
 
 interface navbarProps {}
 
@@ -19,8 +20,11 @@ const Navbar = async () => {
           Open Api
         </Link>
 
-        <div className="md:hidden">
+        {/* for mobile device  */}
+        <div className="md:hidden flex items-center justify-center">
           <ThemeToggle />
+          <MenuToggle />
+          {session ? <SignOutButton /> : <SignInButton />}
         </div>
 
         <div className="hidden md:flex gap-4">
